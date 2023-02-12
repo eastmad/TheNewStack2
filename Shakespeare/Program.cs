@@ -17,7 +17,7 @@ namespace SonnetMaker
             List<string> newwords = new List<string>();
 
             //Starting words
-            MakeSonnetWord ms = new MakeSonnetWord("The", "intelligence,");
+            MakeSonnetWord ms = new MakeSonnetWord("A", "rose");
             newwords.Add(ms.firstword);
             newwords.Add(ms.secondword);
 
