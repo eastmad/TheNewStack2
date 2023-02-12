@@ -1,5 +1,6 @@
 # Making a Sonnet
 
+This prgram just makes statistics against a corpus of words from Shakespeare's sonnets, and then creates one based on two starting words.
 
 - Clone and run the solution TheNewStack2 in Visual Studio or an equivalent. 
 - I set the target framework as net6.0 in the Shakespeare.scsproj; there are no important dependencies.
@@ -35,7 +36,14 @@ When finding candidates for the next word, the bigger the candidate list the wid
         
     const short RANDOM_NOISE = 10;
 
-The highr the number, the more likely stats based on occurences will be overthrown
+The higher the number, the more likely stats based on occurences will be overthrown
         
         
     const short REPEATABLEWORDLENGTH = 2;
+    
+ ## How it chooses
+ 
+       int noise = rnd.Next(RANDOM_NOISE);
+       highestscore = fr.occurences * (bias + noise);
+ 
+ So if a word occurs three times at depth one (next to the target), from current settings that could result in a score of anywhere between 15 and 42  
